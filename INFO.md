@@ -29,4 +29,4 @@
 ## OUTPUT
 * To output (print text) we use "cout" toghether with <<
 * As many as we want can be used
-* <script>"cout"</script> doesn't create a new line at the end of the output
+* "cout" doesn't create a new line at the end of the output
