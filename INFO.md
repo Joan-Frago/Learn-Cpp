@@ -17,6 +17,7 @@
 2. The main difference between C and C++ is that C++ support classes and objects, while C does not.
 
 # NOTES
+## SYNTAX
 * "#include ..." kind of imports a library
 * "using ..." is also a kind of library but from the actual language, i think
 * you can ommit the "using ..." and put it in the code like this
@@ -24,3 +25,8 @@
         using namespace std
 
         std::cout>> ...
+
+## OUTPUT
+* To output (print text) we use "cout" toghether with <<
+* As many as we want can be used
+* <script>"cout"</script> doesn't create a new line at the end of the output
