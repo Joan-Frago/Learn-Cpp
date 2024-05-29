@@ -27,6 +27,83 @@
         std::cout>> ...
 
 ## OUTPUT
+### PRINT LINES
 * To output (print text) we use "cout" toghether with <<
 * As many as we want can be used
 * "cout" doesn't create a new line at the end of the output
+
+### NEW LINES
+* To insert a new line we use "\n" at the end of the output
+  - cout << "Hello world \n";
+
+* Two "\n" characters after each other will create a blank line
+
+* Another way to insert a new line is with the "endl" manipulator
+  - cout << "Hello world" << endl;
+
+## COMMENTS
+### SINGLE-LINE COMMENTS
+* To insert a comment we use "//"
+
+### MULTI-LINE COMMENTS
+* To insert a comment we use "/*" and "*/"
+* Any text between /* and */ will be ommited by the compiler
+
+## VARIABLES
+* int --> stores integers
+* double --> stores floating point numbers
+* char --> stores single characters, between single quotes --> ex. 'B'
+* string --> stores text, between double quotes --> ex. "Hello World"
+* bool --> stores values with two states, true or false
+
+### DECLARE VARIABLES
+#### Syntax
+type variableName = value;
+
+### DISPLAY VARIABLES
+* We can display (print) variables using "cout"
+#### Example
+int myAge = 18;
+cout << "I am " << myAge << " years old.";
+
+### ADD VARIABLES TOGHETHER
+* To add variables toghether we can use the "+" operator
+#### Example
+int x = 5;
+int y = 6;
+int sum = x + y;
+cout << sum;
+
+### DECLARE MULTIPLE VARIABLES
+* To declare more than one variable at the same time, use a comma-separated list
+#### Example
+int x = 5, y = 6, z = 50;
+cout << x + y + z;
+
+### ONE VALUE TO MULTIPLE VARIABLES
+#### Example
+int x, y, z;
+x = y = z = 50;
+cout << x + y + z;
+
+### INDENTIFIERS
+* All C++ variables must be identified with unique names
+* These unique names are called identifiers
+#### General Rules
+1. Names can contain letters, digits and underscores
+2. Names must begin with a letter or an underscore
+3. Names are case-sensitive (myVar and myvar are different variables)
+4. Names cannot contain whitespaces or special characters like !, #, %, etc
+5. Reserved words (like C++ keywords, such as int) cannot be used as names
+
+### CONSTANTS
+* When we don't want others, or ourselves, to change existing variables values we use the "const" keyword.
+#### Example
+const int myNum = 15; // myNum will always be 15
+myNum = 10; // error: assignment of read-only variable 'myNum'
+
+#### Notes on constants
+* When we declare a constant variable, it must be assigned with a value
+##### Example
+const int minutesPerHour;
+minutesPerHour = 60; // error
