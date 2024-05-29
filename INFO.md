@@ -1,3 +1,5 @@
+- Everything is extracted from https://www.w3schools.com/cpp/cpp_operators.asp
+
 # WHAT IS C++?
 1. C++ is a cross-platform language that can be used to create high-performance applications.
 2. C++ was developed by Bjarne Stroustrup, as an extension to the C language.
@@ -107,3 +109,39 @@ myNum = 10; // error: assignment of read-only variable 'myNum'
 ##### Example
 const int minutesPerHour;
 minutesPerHour = 60; // error
+
+## USER INPUT
+* "cin" is used to get user input
+* cin is a predefined variable that reads data from the keyboard with the extraction operator (>>)
+#### Example
+int x;
+cout << "Type a number: "; //Type a number and press enter
+cin >> x; // Get user input from the keyboard
+cout << "Your number is: " << x; // Display the input value
+
+#### Good to know
+* cout is pronounced "see-out", for output
+* cin is pronounced "see-in", for input
+
+## DATA TYPES
+### BASIC DATA TYPES
+- boolean --> 1 byte --> Stores true or false values
+- char --> 1 byte --> Stores a single character / letter / number, or ASCII values
+- int --> 2 or 4 bytes --> Stores whole numbers
+- float --> 4 bytes --> Stores fractional numbers. Sufficient for storing 6 - 7 decimal digits
+- double --> 8 bytes --> Stores fractional numbers. Sufficient for storing 15 decimal digits
+
+#### Scientific Numbers
+* A floating point number can also be a scientific number with an "e" to indicate the power of 10
+##### Example
+float f1 = 35e3;
+double d1 = 12E4;
+
+#### Strings
+* To use strings, we must include an additional header file in the source code, the <string> library
+##### Example
+"# include <string>
+string greeting = "hello";
+cout << greeting;
+
+## OPERATORS
