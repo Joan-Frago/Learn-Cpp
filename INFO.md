@@ -24,10 +24,11 @@
 * "using ..." is also a kind of library but from the actual language, i think
 * you can ommit the "using ..." and put it in the code like this
     * Example
+        ```cpp
         using namespace std
 
         std::cout>> ...
-
+        ```
 ## OUTPUT
 ### PRINT LINES
 * To output (print text) we use "cout" toghether with <<
