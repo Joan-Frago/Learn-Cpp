@@ -27,7 +27,7 @@
         ```cpp
         using namespace std
 
-        std::cout>> ...
+        std::cout >> ...
         ```
 ## OUTPUT
 ### PRINT LINES
@@ -146,3 +146,13 @@ string greeting = "hello";
 cout << greeting;
 
 ## OPERATORS
+### ARITHMETIC OPERATORS
+| Operator | Name | Description | Example |
+| -------- | ---- | ----------- | ------- |
+| + | Addition | Adds together two values | x + y |
+| - | Substraction | Substracts one value from another | x - y |
+| * | Multiplication | Multiplies two values | x * y |
+| / | Division | Divides one value by another | x / y |
+| % | Modulus | Returns the division remainder | x % y |
+| ++ | Increment | Increases the value of a variable by 1 | ++ x |
+| -- | Decrement | Decreases the value of a variable by 1 | -- y |
