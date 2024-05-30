@@ -156,3 +156,29 @@ cout << greeting;
 | % | Modulus | Returns the division remainder | x % y |
 | ++ | Increment | Increases the value of a variable by 1 | ++ x |
 | -- | Decrement | Decreases the value of a variable by 1 | -- y |
+
+### ASSIGNMENT OPERATORS
+- They are used to assign values to variables
+#### Assignment operatror
+- It adds a value to a variable
+- It's the traditional ```cpp=```
+#### Addition assignment operator
+- It adds a value to a variable
+```cpp
+    int x = 10;
+    x += 5;
+```
+
+| Operator | Example |
+| -------- | ---- |
+| = | x = 3 |
+| += | x += 3 |
+| -= | x -= 3 |
+| *= | x *= 3 |
+| /= | x /= 3 |
+| %= | x %= 3 |
+| &= | x &= 3 |
+| |= | x |= 3 |
+| ^= | x ^= 3 |
+| >>= | x >> 3 |
+| <<= | x << 3 |
