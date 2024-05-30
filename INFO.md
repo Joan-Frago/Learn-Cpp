@@ -182,3 +182,28 @@ cout << greeting;
 | ^= | x ^= 3 |
 | >>= | x >> 3 |
 | <<= | x << 3 |
+
+### COMPARISON OPERATORS
+- They are used to compare two values
+- The return value of a comparison is either ```1``` or ```0```, true or false
+- A list of all comparison operators
+
+| Operator | Name | Example |
+| -------- | ---- | ------- |
+| == | Equal to | x == y |
+| != | Not equal to | x != y |
+| > | Greater than | x > y|
+| < | Less than | x < y |
+| >= | Greater than or equal to | x >= y |
+| <= | Less than or equal to | x<= y |
+
+### LOGICAL OPERATORS
+- You can also test for true or false values with logical operators
+
+| Operator | Name | Description | Example |
+| -------- | ---- | ----------- | ------- |
+| && | Logical and | Returns true if both statements are true | x < 5 &&  x < 10 |
+| || | Logical or | Returns true if one of the statements is true | x < 5 || x < 4 |
+| ! | Logical not | Reverse the result, returns false if the result is true | !(x < 5 && x < 10) |
+
+## STRINGS
