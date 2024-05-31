@@ -207,3 +207,111 @@ cout << greeting;
 | ! | Logical not | Reverse the result, returns false if the result is true | !(x < 5 && x < 10) |
 
 ## STRINGS
+- Strings are used for storing text or characters
+- A STRING variable contains a collection of characters surrounded by double quotes:
+```cpp
+    string greeting = "Hello";
+```
+- To use strings, you must include an additional header file in the source code, the <string> library:
+```cpp
+    # include <string>
+
+    string greeting = "Hello";
+```
+
+### CONCATENATION
+- The + operator can be used between strings to add them together and make a new string. This is called CONCATENATION
+```cpp
+    string firstName = "John ";
+    string lastName = "Doe";
+    string fullName = firstName + lastName;
+    cout << fullName;
+```
+
+#### Append
+- A string in C++ is usually an object, which contains functions that can perform certain operations on strings. For example, you could also concatenate strings with the append() function:
+```cpp
+    string firstName = "John ";
+    string lastName = "Doe";
+    string fullName = firstName.append(lastName);
+    cout << fullName;
+```
+- A list of other useful string functions can be found in https://www.w3schools.com/cpp/cpp_ref_string.asp
+
+### NUMBERS AND STRINGS
+- C++ uses the "+" operator for both addition and concatenation
+- Numbers are added. Strings are concatenated
+```cpp
+    // If you add two numbers, the result will be a number
+    int x = 10;
+    int y = 20;
+    int z = x + y; // z will be 30 (and integer)
+```
+
+```cpp
+    // If you add two strings, the result will be a string concatenation
+    string x = "10";
+    string y = "20";
+    string z = x + y; // z will be 1020 (a string)
+```
+
+```cpp
+    // If you try to add a number to a string, an error occurs
+    string x = "10";
+    int y = 20;
+    string z = x + y; // You can't add this (error)
+```
+
+### STRING LENGTH
+- To get the length of a string, we use the length() function:
+```cpp
+    string txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    cout << "The lenght of the txt string is: " << txt.length();
+```
+
+- There's also the size() function to get the length of a string, it's just an alias to the length() function:
+```cpp
+    string txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    cout << "The lenght of the txt string is: " << txt.size();
+```
+
+### ACCESS STRINGS
+- You can access the characters in a string by referring to its index number inside square brackets []:
+```cpp
+    string myString = "Hello";
+    cout << myString[0];
+    // Outputs H
+```
+
+- To print the last character of a string, you can use the following code:
+```cpp
+    string myString = "Hello";
+    cout << myString[myString.length() - 1];
+    // Outputs "o"
+```
+
+#### Change string characters
+- To change the value of a specific character in a string, refer to the index number, and use single quotes:
+```cpp
+    string myString = "Hello";
+    myString[0] = 'J';
+    cout myString;
+    // Outputs Jello instead of Hello
+```
+
+#### The at() function
+- The <string> library also has an at() function that can be used to access characters in a string:
+
+```cpp
+    string myString = "Hello";
+    cout << myString; // Outputs Hello
+
+    cout << myString.at(0); // First character
+    cout << myString.at(1); // Second character
+    cout << myString.at(myString.length() - 1); // Last character
+
+    myString.at(0) = 'J';
+    cout << myString; // Outputs Jello
+```
+
+### SPECIAL CHARACTERS
