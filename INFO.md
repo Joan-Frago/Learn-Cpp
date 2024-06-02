@@ -315,3 +315,121 @@ cout << greeting;
 ```
 
 ### SPECIAL CHARACTERS
+
+- Because strings must be written within quotes, C++ will missunderstand this string, and generate an error:
+```cpp
+    string txt = "We are the so-called "Vikings" from the north.";
+```
+- The solution to avoid this problem, is to use the backslash escape character.
+- The backlash (\) escape character turns special characters into string characters:
+| Escape character | Result | Description |
+| ---------------- | ------ | ----------- |
+| \' | ' | Single quote |
+| \" | " | Double quote |
+| \\ | \ | Backslash |
+
+```cpp
+    string txt = "We are the so-called \"Vikings\" from the north.";
+```
+```cpp
+    string txt = "It\'s alright.";
+```
+```cpp
+    string txt = "The character \\ is called backslash.";
+```
+
+- Other popular escape characters in C++ are:
+| Escape Character | Result |
+| ---------------- | ------ |
+| \n | New Line |
+| \t | Tab |
+
+### USER INPUT STRINGS
+- It's possible to use the extraction operator >> on cin to store a string entered by a user:
+```cpp
+    string firstName;
+    cout << "Type your first name: ";
+    cin >> firstName; // get user input from the keyboard
+    cout << "Your name is: " << firstName;
+
+    // Type your fist name: John
+    // Your name is: John
+```
+
+- However, cin considers a space (whitespace, tabs, etc) as a terminating character, which means that it can only store a single word (even if you type many words):
+```cpp
+    string fullName;
+    cout << "Type your full name: ";
+    cin >> fullName;
+    cout << "Your full name is: " << fullName;
+
+    // Type your full name: John Doe
+    // Your name is: John
+```
+- For the example below, you would expect the program to print "John Doe", but it only prints "John".
+- That's why, when working with strings, we often use the getline() function to read a line of text. It takes cin as the first parameter, and the string variable as the second:
+```cpp
+    string fullName;
+    cout << "Type your full name: ";
+    getline (cin, fullName);
+    cout << "Your name is: " << fullName;
+
+    // Type your full name: John Doe
+    // Your name is: John Doe
+```
+
+### OMITTING NAMESPACE
+- You might see some C++ programs that run without the standard namespace library. The "using namespace std" line can be omitted and replaced with the "std" keyword, followed by the "::" operator for "string" (and "cout") objects:
+```cpp
+    # include <iostream>
+    # include <string>
+    // using namespace std;
+
+    int main() {
+        std::string greeting = "Hello";
+        std::cout << greeting;
+        return 0;
+    }
+```
+
+### C-STYLE STRINGS
+- C-Style strigns are created with the "char" type instead of "string".
+
+- The name comes from the C language, which, unlike many other programming languages, does not have a "string" type for easily creating string variables. Instead, you must use the "char" type and create an array of characters to make a "string" in C.
+
+- As C++ was developed as an extension of C, it continued to support this way of creating strings in C++:
+```cpp
+    string greeting1 = "Hello"; // Regular string
+    string greeting2 = "Hello"; // C-Style string (an array of characters)
+```
+
+- It's more convinient to use the standard "string" type. However, one reason some users continue to use C-Style strings is that they have access to functions from the C standard library.
+- A list of all C-Style string functions can be found here: https://www.w3schools.com/cpp/cpp_ref_cstring.asp
+
+## MATH
+- C++ has many functions to perform mathematical tasks on numbers.
+
+### Max and Min
+- The "max(x,y)" function can be used to find the highest value of x and y.
+```cpp
+    cout << max(5, 10);
+```
+
+- And the "min(x,y)" function can be used to find the lowest value of x and y:
+```cpp
+    cout << min(5,10);
+```
+
+### <cmath> HEADER
+- Other functions, such as "sqrt" (square root), "round" (rounds a number) and "log" (natural logarithm), can be found in the <cmath> header file:
+```cpp
+    // Include the cmath library
+    #include <cmath>
+
+    cout << sqrt(64);
+    cout << round(2.6);
+    cout << log(2);
+```
+- For a complete reference of Math functions, go to this page: https://www.w3schools.com/cpp/cpp_ref_math.asp
+
+## BOOLEANS
