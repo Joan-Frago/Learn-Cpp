@@ -1,4 +1,4 @@
-- Everything is extracted from https://www.w3schools.com/cpp/cpp_operators.asp
+- Everything is extracted from https://www.w3schools.com/cpp/default.asp
 
 # WHAT IS C++?
 1. C++ is a cross-platform language that can be used to create high-performance applications.
