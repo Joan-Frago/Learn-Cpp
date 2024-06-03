@@ -322,6 +322,7 @@ cout << greeting;
 ```
 - The solution to avoid this problem, is to use the backslash escape character.
 - The backlash (\) escape character turns special characters into string characters:
+
 | Escape character | Result | Description |
 | ---------------- | ------ | ----------- |
 | \' | ' | Single quote |
@@ -339,6 +340,7 @@ cout << greeting;
 ```
 
 - Other popular escape characters in C++ are:
+
 | Escape Character | Result |
 | ---------------- | ------ |
 | \n | New Line |
