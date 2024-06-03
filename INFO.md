@@ -433,3 +433,271 @@ cout << greeting;
 - For a complete reference of Math functions, go to this page: https://www.w3schools.com/cpp/cpp_ref_math.asp
 
 ## BOOLEANS
+-  C++ has a data type (bool) which can take the values "true" (1) or "false" (0).
+### BOOLEAN VALUES
+- A boolean variable is declared with the "bool" keyword and can only take the values "true" or "false":
+```cpp
+    bool isCodingFun = true;
+    bool isFishTasty = false;
+    cout << isCodingFun; // Outputs 1 (true)
+    cout << isFishTasty; // Outputs 0 (false)
+```
+
+### BOOLEAN EXPRESSION
+- A Boolean Expression returns a boolean value that is either 1 (true) or 0 (false).
+- This is useful to build logic, and find answers.
+- You can use a comparison operator, such as the greater than (>) operator, to find out if an expression (or variable) is true or false:
+```cpp
+    int x = 10;
+    int y = 9;
+    cout << (x > y); // Returns 1 (true), because 10 is higher than 9
+```
+
+- We can also check if an expression is equal to something, with the equal to (==) operator:
+```cpp
+    int x = 10;
+    cout << (x == 10); // Returns 1 (true), because the value of x is equal to 10
+```
+#### Real life example
+```cpp
+    int myAge = 25;
+    int votingAge = 18;
+
+    cout << (myAge >= votingAge); // Returns 1 (true)
+```
+- We can also do that with an if...else statement, so we can perform differend actions depending on the result:
+```cpp
+    # include <iostream>
+    using namespace std;
+
+    int main() {
+        int myAge = 25;
+        int votingAge = 18;
+
+        if (myAge >= votingAge) {
+            cout << "Old enough to vote!";
+        } else {
+            cout << "Not old enough to vote.";
+        }
+        return 0;
+    }
+
+    // Outputs: Old enough to vote!
+```
+
+## CONDITIONS
+- C++ supports the usual logical conditions from mathematics:
+  * Less than: a < b
+  * Less than or equal to: a <= b
+  * Greater than: a > b
+  * Greater than or equal to: a >= b
+  * Equal to a == b
+  * Not Equal to: a != b
+- You can use these conditions to perform different actions for different decisions.
+
+- C++ has the following conditional statements:
+  * Use if to specify a block of code to be executed, if a specified condition is true
+  * Use else to specify a block of code to be executed, if the same condition is false
+  * Use else if to specify a new condition to test, if the first condition is false
+  * Use switch to specify many alternative blocks of code to be executed
+
+### THE IF STATEMENT
+- Use the if statement to specify a block of C++ code to be executed if a condition is true.
+#### Syntax
+```cpp
+if (condition) {
+    // block of code to be executed if the condition is true
+}
+```
+#### Examples
+```cpp
+# include <iostream>
+using namespace std;
+
+int main() {
+    if (20 > 18) {
+        cout << "20 is greater than 18";
+    }
+    return 0;
+}
+```
+```cpp
+# include <iostream>
+using namespace std;
+
+int main() {
+    int x = 20;
+    int y = 18;
+    if (x > y) {
+        cout << "x is greater than y";
+    }
+}
+```
+
+### THE ELSE STATEMENT
+- Use the else statement to specify a block of code to be executed if the condition is false
+
+#### Syntax
+```cpp
+if (condition) {
+    // block of code to be executed if the condition is true
+} else {
+    // block of code to be executed if the condition is false
+}
+```
+#### Example
+```cpp
+# include <iostream>
+using namespace std;
+
+int main() {
+    int time = 20;
+    if (time < 18) {
+        cout << "Good day.";
+    } else {
+        cout << "Good evening.";
+    }
+    return 0;
+}
+
+// Outputs "Good evening."
+```
+
+### THE ELSE IF STATEMENT
+- Use the else if statement to specify a new condition if the first condition is false.
+
+#### Syntax
+```cpp
+if (condition1) {
+    // block of code to be executed if the condition1 is true
+} else if (condition2) {
+    // block of code to be executed if the condition1 is false and condition2 is true
+} else {
+    // block of code to be executed if the condition1 is false and condition2 is false
+}
+```
+#### Example
+```cpp
+# include <iostream>
+using namespace std;
+
+int main() {
+    int time = 22;
+    if (time < 10) {
+        cout << "Good morning.";
+    } else if (time < 20) {
+        cout << "Good day.";
+    } else {
+        cout << "Good evening";
+    }
+    return 0;
+}
+
+// Outputs "Good evening."
+```
+
+### SHORT HAND IF...ELSE (TERNARY OPERATOR)
+- There is also a short-hand if else, which is known as the "ternary operator" because it consists of three operands. It can be used to replace multiple lines of code with a single line. It is often used to replace simple if else statements:
+
+#### Syntax
+```cpp
+variable = (condition) ? expressionTrue : expressionFalse;
+```
+
+- Instead of writing:
+```cpp
+int time = 20;
+if (time < 18) {
+    cout << "Good day.";
+} else {
+    cout << "Good evening.";
+}
+```
+- You can simply write:
+```cpp
+int time = 20;
+string result = (time < 18) ? "Good day." : "Good evening";
+cout << result;
+```
+
+## SWITCH STATEMENTS
+- Use switch statement to select one of many code blocks to be executed.
+
+#### Syntax
+```cpp
+switch(expression) {
+    case x:
+        // code block
+        break;
+    case y:
+        // code block
+        break;
+    default:
+        // code block
+}
+```
+
+- How it works:
+  * The switch expression is evaluated one
+  * The value of the expression is compared with the values of each case
+  * If there is a match, the associated block of code is executed
+  * The break and default keywords are optional, and will be described later on.
+
+- The example below uses the weekday number to calculate the weekday name:
+```cpp
+# include <iostream>
+using namespace std;
+
+int main() {
+    int day = 4;
+    switch (day) {
+        case 1:
+            cout << "Monday";
+            break;
+        case 2:
+            cout << "Tuesday";
+            break;
+        case 3:
+            cout << "Wednesday";
+            break;
+        case 4:
+            cout << "Thursday";
+            break;
+        case 5:
+            cout << "Friday";
+             break;
+        case 6:
+            cout << "Saturday";
+            break;
+        case 7:
+            cout << "Sunday";
+            break;
+    return 0;
+    }
+}
+// Outputs "Thursday" (day 4)
+```
+
+### THE BREAK KEYWORD
+- When C++ reacher a "break" keyword, it breaks out of the switch block.
+- This will stop the execution of more code and case testing inside the block.
+- When a match is found, and the job is done, it's time for a break. There is no need for more testing.
+
+### THE DEFAULT KEYWORD
+- The "default" keyword specifies some code to run if there is no case match:
+```cpp
+int day = 4;
+switch (day) {
+    case 6:
+        cout << "Today is Saturday";
+        break;
+    case 7:
+        cout << "Today is Sunday";
+        break;
+    default:
+        cout << "Looking forward to the Weekend";
+}
+// Outputs "Looking forward to the Weekend"
+```
+
+## WHILE LOOP
