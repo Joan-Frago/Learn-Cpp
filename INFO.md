@@ -934,3 +934,130 @@ for (int i = 0; i <= 10; i = i + 2) {
 ```
 
 ### Nested Loops
+- It is also possible to place a loop inside another loop. This is called a nested loop.
+- The "inner loop" will be executed one time for each iteration of the "outer loop":
+
+#### Example
+```cpp
+include <iostream>
+using namespace std;
+
+// Outer loop
+for (int i = 1; i <= 2; i ++) {
+    cout << "Outer: " << i << "\n"; // Executes 2 times
+
+    // Inner loop
+    for (int j = 1; j <= 3; j ++) {
+        cout << "Inner: " << j << "\n"; // Executes 6 times (2 * 3)
+    }
+}
+```
+
+### The Foreach Loop
+- There is also a for-each loop, which is used exclusively to loop through elements in an array (or other data sets):
+
+#### Syntax
+```cpp
+for (type variableName : arrayName) {
+    // code block to be executed
+}
+```
+
+#### Example
+```cpp
+include <iostream>
+using namespace std;
+
+int myNumbers[5] = {10, 20, 30, 40, 50};
+for (int i : myNumbers) {
+    cout << i << "\n";
+}
+```
+
+## BREAK AND CONTINUE
+
+### BREAK
+- The break statement can be used to jump out of a loop.
+
+#### Example
+- This example jumps out of the loop when i is equal to 4:
+
+```cpp
+include <iostream>
+using namespace std;
+
+for (int i = 0; i < 10; i ++) {
+    if (i == 4) {
+        break;
+    }
+    cout << i << "\n";
+}
+```
+
+### CONTINUE
+- The continue operator breaks one iteration (in the loop), if a specific condition occurs, and continues with the next iteration in the loop.
+
+#### Example
+- This example skips the value of 4:
+```cpp
+include <iostream>
+using namespace std;
+
+for (int i = 0; i < 10; i ++) {
+    if (i == 4) {
+        continue;
+    }
+    cout << i << "\n";
+}
+```
+
+### BREAK AND CONTINUE IN WHILE LOOP
+- You can also use break and continue in while loops
+
+#### Break example
+```cpp
+include <iostream>
+using namespace std;
+
+int i = 0;
+while (i < 10) {
+    cout << i << "\n";
+    i ++;
+    if (i == 4) {
+        break;
+    }
+}
+```
+
+#### Continue example
+```cpp
+include <iostream>
+using namespace std;
+
+int i = 0;
+while (i < 10) {
+    cout << i << "\n";
+    i ++;
+    if (i == 4) {
+        continue;
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
