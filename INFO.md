@@ -1044,7 +1044,164 @@ while (i < 10) {
 }
 ```
 
+## ARRAYS
+- Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
 
+- To declare an array:
+    1. Define de variable type
+    2. Specify the name of the array followed by square brackets
+    3. Specify the number of elements it should store.
+
+```cpp
+string cars[4];
+```
+- We have now declared a variable that holds an array of four strings. To insert values to it, we can use the array literal:
+    - Place the values in a comma-separated list, inside curly braces:
+
+```cpp
+string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+```
+
+- To create an array of 3 integers, you could write:
+```cpp
+int myNum[2] = {10, 20, 30};
+```
+
+### ACCESS THE ELEMENTS OF AN ARRAY
+- You can access an array by referring to the index number inside square brackets [];
+- This example accesses the value of the first element in cars:
+```cpp
+include <iostream>
+using namespace std;
+
+string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+cout << cars[0];
+// Outputs Volvo
+```
+
+### CHANGE AN ARRAY ELEMENT
+- To change the value of a specific element, refer to the index number:
+```cpp
+cars[0] = "Opel";
+```
+
+#### Example
+```cpp
+include <iostream>
+using namespace std;
+
+string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
+cars[0] = "Opel";
+cout << cars[0];
+// Now outputs Opel instead of Volvo
+```
+
+### LOOP THROUGH AN ARRAY
+- You can loop through an array with the for loop
+- The following example outputs all the element in the cars array:
+```cpp
+# include <iostream>
+using namespace std;
+
+int main() {
+    string cars[5] = {"Volvo", "BMW", "Ford", "Mazda", "Tesla"};
+
+    for (int i = 0; i < 5; i++) {
+        cout << cars[i] << "\n";
+    }
+    return 0;
+}
+```
+
+```cpp
+# include <iostream>
+using namespace std;
+
+int main() {
+    string cars[5] = {"Volvo", "BMW", "Ford", "Mazda", "Tesla"};
+
+    for (int i = 0; i < 5; i++) {
+        cout << i << "=" << cars[i] << "\n";
+    }
+    return 0;
+}
+```
+
+#### Foreach Loop
+```cpp
+int myNumbers[5] = {10, 20, 30, 40, 50};
+for (int i : myNumbers) {
+  cout << i << "\n";
+}
+```
+
+### OMMIT ARRAY SIZE
+- In C++ you don't have to specify the size of the array. The compiler can determine the size of the array based on the number of inserted values:
+
+```cpp
+string cars[] = {"Volvo", "BMW", "Ford"}; // Three array elements
+```
+- However, indicating the size of the array is considered "good practice", because it will reduce the chance of errors in your program.
+
+### OMMIT ELEMENTS IN DECLARATION
+- It is also possible to declare an array without specifying the elements on declaration, and add them later:
+```cpp
+string cars[5];
+cars[0] = "Volvo";
+cars[1] = "BMW";
+...
+```
+
+### GET THE SIZE OF AN ARRAY
+- To get the size of an array, you can use the sizeof() operator:
+```cpp
+int myNumbers[5] = {10,20,30,40,50};
+cout << sizeof(myNumbers);
+```
+- RESULT --> 20
+
+- Why is the result 20 instead of 5?
+    - It's because the sizeof() operator returns the size of a type in bytes.
+
+- An int type is usually 4 bytes, so from the example, 4 x 5 (4 bytes x 5 elements) = 20 bytes.
+- To find out how many elements an array has, you have to divide the size of the array by the size of the data type it contains:
+```cpp
+# include <iostream>
+using namespace std;
+
+int main() {
+    int myNumbers[5] = {10,20,30,40,50};
+    int getArrayLength = sizeof(myNumbers) / sizeof(int);
+    cout << getArrayLength;
+
+    return 0;
+}
+```
+
+- RESULT --> 5
+
+### LOOP THROUGH AN ARRAY WITH sizeof()
+- In the Arrays and Loops Chapter, we wrote the size of the array in the loop condition (i < 5). This is not ideal, since it will only work for arrays of a specified size.
+- However, by using the sizeof() approach from the example above, we can now make loops that work for arrays of any size, which is more sustainable.
+
+- Instead of writing:
+```cpp
+int myNumbers[5] = {10, 20, 30, 40, 50};
+for (int i = 0; i < 5; i++) {
+    cout << myNumbers[i] << "\n";
+}
+```
+
+- It is better to write:
+```cpp
+int myNumbers[5] = {10, 20, 30, 40, 50};
+for (int i = 0; i < sizeof(myNumbers) / sizeof(int); i++) {
+    cout << myNumbers[i] << "\n";
+}
+```
+
+### MULTI-DIMENSIONAL ARRAYS
+- 
 
 
 
