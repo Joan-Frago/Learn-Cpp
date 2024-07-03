@@ -1,7 +1,3 @@
-// percentage of total who finished
-// percentage of male who finished
-// percentage of female who finished
-
 # include <iostream>
 using namespace std;
 
@@ -35,13 +31,19 @@ int main() {
     cout << "There were " << totalFinishedFemale << " female finishers" << endl;
     
     cout << endl << endl << "PERCENTAGE WHO FINISHED" << endl;
-    // calculate
+    // calculate (totalFinished * 100) / totalPart
+    perFinished = (totalFinished * 100) / totalPart;
+    cout << perFinished;
 
     cout << endl << endl << "PERCENTAGE OF MALE WHO FINISHED" << endl;
-    // calculate
+    // calculate (totalFinishedMale * 100) / totalPartMale
+    perFinishedMale = (totalFinishedMale * 100) / totalPartMale;
+    cout << perFinishedMale;
 
     cout << endl << endl << "PERCENTAGE OF FEMALE WHO FINISHED" << endl;
-    // calculate
+    // calculate (totalFinishedFemale * 100) / totalPartFemale
+    perFinishedFemale = (totalFinishedFemale * 100) / totalPartFemale;
+    cout << perFinishedFemale << endl;
 
     return 0;
 }
