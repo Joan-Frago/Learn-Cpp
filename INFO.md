@@ -1201,18 +1201,105 @@ for (int i = 0; i < sizeof(myNumbers) / sizeof(int); i++) {
 ```
 
 ### MULTI-DIMENSIONAL ARRAYS
+- A multidimensional array is an array of arrays.
+- To declare a multidimensional array, define the variable type, specify the name of the array followed by square brackets which specify how many elements the main array has, followed by another set of square brackets which indicates how many elements the sub-arrays have.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    string letters[2][4];
+
+    return 0;
+}
+```
+
+- As with ordinary arrays, you can insert values with an array literal - a comma-separated list inside curly braces. In a multidimensional array, each element in an array literal is another array literal.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    string letters[2][4] = {
+        {"A", "B", "C", "D"},
+        {"E", "F", "G", "H"}
+    };
+
+    return 0;
+}
+```
+
+- Each set of square brackets in an array declaration adds another dimension to an array. An array like the one above is said to have two dimensions.
+- Arrays can have any number of dimensions. The more dimensions an array has, the more complex the code becomes. The following array has three dimensions:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    string letters[2][2][2] = {
+        {
+            { "A", "B" },
+            { "C", "D" }
+        },
+        {
+            { "E", "F" },
+            { "G", "H" }
+        }
+    };
+
+    return 0;
+}
+```
+
+#### ACCESS THE ELEMENTS OF A MULTI-DIMENSIONAL ARRAYS
+
+- To access the elements of a multidimensional array, specify an index number in each of the array's dimensions.
+- This statement accesses the value of the first element in the first row (0) and third column (2) of the letters array.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    string letters[2][4] = {
+        {"A", "B", "C", "D"},
+        {"E", "F", "G", "H"}
+    };
+
+    cout << letters[0][2]; // Outputs "C"
+
+    return 0;
+}
+```
+
+#### CHANGE ELEMENTS IN A MULTI-DIMENSIONAL ARRAY
+
+- To change the value of a multidimensional array, refer to the index number of the element in each of the dimensions:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    string letters[2][4] = {
+        {"A", "B", "C", "D"},
+        {"E", "F", "G", "H"}
+    };
+
+    letters[0][0] = "Z";
+
+    cout << letters[0][0]; // Now outputs "Z" instead of "A"
+
+    return 0;
+}
+```
+
+#### LOOP THROUGH A MULTI-DIMENSIONAL ARRAY
+
 - 
-
-
-
-
-
-
-
-
-
-
-
 
 
 
