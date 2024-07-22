@@ -18,8 +18,8 @@ int main() {
         string newTask;
         cout << "How is the new task going to be called?" << endl << "-->";
         cin >> newTask;
-	tasks.append(newTask);
-	cout << tasks;
+	    tasks.append(newTask);
+	    cout << tasks;
     }
     else if (option == 2) {
         // See current tasks
