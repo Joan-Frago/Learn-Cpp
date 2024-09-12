@@ -7,7 +7,7 @@ int main() {
     cout << "Put a number: ";
     cin >> num;
 
-    for (int i; i != num + 1; i++) {
+    for (int i; i != num; i++) {
         cout << i << endl;
     }
     return 0;
