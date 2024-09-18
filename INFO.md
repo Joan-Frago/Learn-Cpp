@@ -1376,8 +1376,79 @@ int main() {
 }
 
 ```
+## STRUCTURES
+- Structures (also called structs) are a way to group several variables into one place. Each variable in the structure is known as a member of the structure
+- Unlike an array, a structure can contain many different data types (int, string, bool, etc.)
+### CREATE A STRUCTURE
+- To create a structure, use the ```struct``` keyword and declare each of its members inside curly braces
+- After the declaration, specify the name of the structure variable (myStructure in the example below)
+```cpp
+struct {                // Structure declaration
+    int myNum;          // Member (int variable)
+    string myString;    // Member (string variable)
+} myStructure;          // Structure variable
+```
+### ACCESS STRUCTURE VARIABLES
+- To access members of a structure, use the dot syntax(.):
+```cpp
+// Create a structure variable called myStructure
+struct {
+    int myNum;
+    string myString;
+} myStructure;
 
+// Assign values to members of myStructure
+myStructure.myNum = 1;
+myStructure.myString = "Hello World!";
 
+// Print members of myStructure
+cout << myStructure.myNum << "\n";
+cout << myStructure.myString << "\n";
+```
+### ONE STRUCTURE IN MULTIPLE VARIABLES
+- You can use a comma (,) to use one structure in two different variables
+- One structure to represent two cars:
+```cpp
+# include <iostream>
+using namespace std;
 
+struct {
+    string brand;
+    string model;
+    int year;
+} myCar1, myCar2;
+// We can add variables by separating them with a comma
+
+// Put data into the first structure
+myCar1.brand = "BMW";
+myCar1.model = "X5";
+myCar1.year = 1999;
+
+// Put data into the second structure
+myCar2.brand = "Audi";
+myCar2.model = "A1";
+myCar2.year = 2015;
+
+// Print the structure members
+cout << myCar1.brand << " " << myCar1.model << " " << myCar1.year << "\n";
+cout << myCar2.brand << " " << myCar2.model << " " << myCar2.year << "\n";
+```
+### NAMES STRUCTURES
+- By giving a name to the structure, you can treat it as a data type. This means you can create variables with this structure anywhere in the program at any time.
+- To create a named structure, put the name of the structure right after the ```struct``` keyword
+```cpp
+struct myDataType { // This structure is named "myDataType"
+    int myNum;
+    string myString;
+}
+```
+- To declare a variable that uses the structure, use the name of the structure as the data type of the variable
+```cpp
+myDataType myVar;
+```
+- Use one structure to represent two cars
+```cpp
+
+```
 
 
