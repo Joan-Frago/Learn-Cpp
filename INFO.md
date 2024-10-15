@@ -924,6 +924,7 @@ for (int i = 0; i < 5; i ++) {
     cout << i << "\n";
 }
 ```
+
 ```cpp
 include <iostream>
 using namespace std;
@@ -934,10 +935,12 @@ for (int i = 0; i <= 10; i = i + 2) {
 ```
 
 ### Nested Loops
+
 - It is also possible to place a loop inside another loop. This is called a nested loop.
 - The "inner loop" will be executed one time for each iteration of the "outer loop":
 
 #### Example
+
 ```cpp
 include <iostream>
 using namespace std;
@@ -954,9 +957,11 @@ for (int i = 1; i <= 2; i ++) {
 ```
 
 ### The Foreach Loop
+
 - There is also a for-each loop, which is used exclusively to loop through elements in an array (or other data sets):
 
 #### Syntax
+
 ```cpp
 for (type variableName : arrayName) {
     // code block to be executed
@@ -964,6 +969,7 @@ for (type variableName : arrayName) {
 ```
 
 #### Example
+
 ```cpp
 include <iostream>
 using namespace std;
@@ -977,9 +983,11 @@ for (int i : myNumbers) {
 ## BREAK AND CONTINUE
 
 ### BREAK
+
 - The break statement can be used to jump out of a loop.
 
 #### Example
+
 - This example jumps out of the loop when i is equal to 4:
 
 ```cpp
@@ -995,10 +1003,13 @@ for (int i = 0; i < 10; i ++) {
 ```
 
 ### CONTINUE
+
 - The continue operator breaks one iteration (in the loop), if a specific condition occurs, and continues with the next iteration in the loop.
 
 #### Example
+
 - This example skips the value of 4:
+
 ```cpp
 include <iostream>
 using namespace std;
@@ -1012,9 +1023,11 @@ for (int i = 0; i < 10; i ++) {
 ```
 
 ### BREAK AND CONTINUE IN WHILE LOOP
+
 - You can also use break and continue in while loops
 
 #### Break example
+
 ```cpp
 include <iostream>
 using namespace std;
@@ -1030,6 +1043,7 @@ while (i < 10) {
 ```
 
 #### Continue example
+
 ```cpp
 include <iostream>
 using namespace std;
@@ -1045,31 +1059,36 @@ while (i < 10) {
 ```
 
 ## ARRAYS
+
 - Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
 
 - To declare an array:
-    1. Define de variable type
-    2. Specify the name of the array followed by square brackets
-    3. Specify the number of elements it should store.
+  1. Define de variable type
+  2. Specify the name of the array followed by square brackets
+  3. Specify the number of elements it should store.
 
 ```cpp
 string cars[4];
 ```
+
 - We have now declared a variable that holds an array of four strings. To insert values to it, we can use the array literal:
-    - Place the values in a comma-separated list, inside curly braces:
+  - Place the values in a comma-separated list, inside curly braces:
 
 ```cpp
 string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
 ```
 
 - To create an array of 3 integers, you could write:
+
 ```cpp
 int myNum[2] = {10, 20, 30};
 ```
 
 ### ACCESS THE ELEMENTS OF AN ARRAY
+
 - You can access an array by referring to the index number inside square brackets [];
 - This example accesses the value of the first element in cars:
+
 ```cpp
 include <iostream>
 using namespace std;
@@ -1080,12 +1099,15 @@ cout << cars[0];
 ```
 
 ### CHANGE AN ARRAY ELEMENT
+
 - To change the value of a specific element, refer to the index number:
+
 ```cpp
 cars[0] = "Opel";
 ```
 
 #### Example
+
 ```cpp
 include <iostream>
 using namespace std;
@@ -1097,8 +1119,10 @@ cout << cars[0];
 ```
 
 ### LOOP THROUGH AN ARRAY
+
 - You can loop through an array with the for loop
 - The following example outputs all the element in the cars array:
+
 ```cpp
 # include <iostream>
 using namespace std;
@@ -1128,6 +1152,7 @@ int main() {
 ```
 
 #### Foreach Loop
+
 ```cpp
 int myNumbers[5] = {10, 20, 30, 40, 50};
 for (int i : myNumbers) {
@@ -1136,15 +1161,19 @@ for (int i : myNumbers) {
 ```
 
 ### OMMIT ARRAY SIZE
+
 - In C++ you don't have to specify the size of the array. The compiler can determine the size of the array based on the number of inserted values:
 
 ```cpp
 string cars[] = {"Volvo", "BMW", "Ford"}; // Three array elements
 ```
+
 - However, indicating the size of the array is considered "good practice", because it will reduce the chance of errors in your program.
 
 ### OMMIT ELEMENTS IN DECLARATION
+
 - It is also possible to declare an array without specifying the elements on declaration, and add them later:
+
 ```cpp
 string cars[5];
 cars[0] = "Volvo";
@@ -1153,18 +1182,23 @@ cars[1] = "BMW";
 ```
 
 ### GET THE SIZE OF AN ARRAY
+
 - To get the size of an array, you can use the sizeof() operator:
+
 ```cpp
 int myNumbers[5] = {10,20,30,40,50};
 cout << sizeof(myNumbers);
 ```
+
 - RESULT --> 20
 
 - Why is the result 20 instead of 5?
-    - It's because the sizeof() operator returns the size of a type in bytes.
+
+  - It's because the sizeof() operator returns the size of a type in bytes.
 
 - An int type is usually 4 bytes, so from the example, 4 x 5 (4 bytes x 5 elements) = 20 bytes.
 - To find out how many elements an array has, you have to divide the size of the array by the size of the data type it contains:
+
 ```cpp
 # include <iostream>
 using namespace std;
@@ -1181,10 +1215,12 @@ int main() {
 - RESULT --> 5
 
 ### LOOP THROUGH AN ARRAY WITH sizeof()
+
 - In the Arrays and Loops Chapter, we wrote the size of the array in the loop condition (i < 5). This is not ideal, since it will only work for arrays of a specified size.
 - However, by using the sizeof() approach from the example above, we can now make loops that work for arrays of any size, which is more sustainable.
 
 - Instead of writing:
+
 ```cpp
 int myNumbers[5] = {10, 20, 30, 40, 50};
 for (int i = 0; i < 5; i++) {
@@ -1193,6 +1229,7 @@ for (int i = 0; i < 5; i++) {
 ```
 
 - It is better to write:
+
 ```cpp
 int myNumbers[5] = {10, 20, 30, 40, 50};
 for (int i = 0; i < sizeof(myNumbers) / sizeof(int); i++) {
@@ -1201,6 +1238,7 @@ for (int i = 0; i < sizeof(myNumbers) / sizeof(int); i++) {
 ```
 
 ### MULTI-DIMENSIONAL ARRAYS
+
 - A multidimensional array is an array of arrays.
 - To declare a multidimensional array, define the variable type, specify the name of the array followed by square brackets which specify how many elements the main array has, followed by another set of square brackets which indicates how many elements the sub-arrays have.
 
@@ -1323,6 +1361,7 @@ int main() {
 ```
 
 #### WHY MULTI-DIMENSIONAL ARRAYS?
+
 - Multi-dimensional arrays are good at representing grids. This example shows a practical use for them. In the following example we use a multidimensional array to represent a small game of battleship.
 
 ```cpp
@@ -1345,7 +1384,7 @@ int main() {
     // Allow the player to keep going until they have hit all four ships
     while (hits < 4) {
         int row, column;
-        
+
         // Ask the player for a row
         cout << "Choose a row number between 0 and 3: ";
         cin >> row;
@@ -1376,20 +1415,28 @@ int main() {
 }
 
 ```
+
 ## STRUCTURES
+
 - Structures (also called structs) are a way to group several variables into one place. Each variable in the structure is known as a member of the structure
 - Unlike an array, a structure can contain many different data types (int, string, bool, etc.)
+
 ### CREATE A STRUCTURE
-- To create a structure, use the ```struct``` keyword and declare each of its members inside curly braces
+
+- To create a structure, use the `struct` keyword and declare each of its members inside curly braces
 - After the declaration, specify the name of the structure variable (myStructure in the example below)
+
 ```cpp
 struct {                // Structure declaration
     int myNum;          // Member (int variable)
     string myString;    // Member (string variable)
 } myStructure;          // Structure variable
 ```
+
 ### ACCESS STRUCTURE VARIABLES
+
 - To access members of a structure, use the dot syntax(.):
+
 ```cpp
 // Create a structure variable called myStructure
 struct {
@@ -1405,9 +1452,12 @@ myStructure.myString = "Hello World!";
 cout << myStructure.myNum << "\n";
 cout << myStructure.myString << "\n";
 ```
+
 ### ONE STRUCTURE IN MULTIPLE VARIABLES
+
 - You can use a comma (,) to use one structure in two different variables
 - One structure to represent two cars:
+
 ```cpp
 # include <iostream>
 using namespace std;
@@ -1433,22 +1483,158 @@ myCar2.year = 2015;
 cout << myCar1.brand << " " << myCar1.model << " " << myCar1.year << "\n";
 cout << myCar2.brand << " " << myCar2.model << " " << myCar2.year << "\n";
 ```
-### NAMES STRUCTURES
+
+### NAMED STRUCTURES
+
 - By giving a name to the structure, you can treat it as a data type. This means you can create variables with this structure anywhere in the program at any time.
-- To create a named structure, put the name of the structure right after the ```struct``` keyword
+- To create a named structure, put the name of the structure right after the `struct` keyword
+
 ```cpp
 struct myDataType { // This structure is named "myDataType"
     int myNum;
     string myString;
-}
+};
 ```
+
 - To declare a variable that uses the structure, use the name of the structure as the data type of the variable
+
 ```cpp
 myDataType myVar;
 ```
-- Use one structure to represent two cars
-```cpp
 
+- Use one structure to represent two cars
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// Declare a structure called car
+struct car {
+    string brand;
+    string model;
+    int year;
+}
+
+int main() {
+    // Create a car structure and store it in myCar1
+    car myCar1;
+    myCar1.brand = "Ford"
+    myCar1.model = "Puma"
+    myCar1.year = 2021
+
+    // Create another car structure and store it in myCar2
+    car myCar2;
+    myCar2.brand = "Peugeot"
+    myCar2.model = "206"
+    myCar2.year = 1998
+
+    // Print the structure members
+    cout << myCar1.brand << " " << myCar1.model << " " << myCar1.year << "\n";
+    cout << myCar2.brand << " " << myCar2.model << " " << myCar2.year << "\n";
+
+    return 0;
+}
 ```
 
+## ENUMS
+- An **enum** is a special type that represents a group of constants (unchangable values).
+- To create an enum, use the ```enum``` keyword, followed by the name of the enum, and separate the enum items with a comma.
+```cpp
+enum Level {
+    LOW,
+    MEDIUM,
+    HIGH
+};
 
+// The last item does not need a comma
+// It is considered a good practice to use uppercase, but it is not recommended
+// Enum is short for "enumerations", which means "specifically listed"
+```
+
+- To access the enum, you must create a variable of it.
+- Inside the ```main()``` method, specify the ```enum``` keyword, followd by the name of the enum (```Level```) and then the name of the enum variable (```myVar``` in this example)
+```cpp
+enum Level myVar;
+```
+- Now that you have created an enum variable (```myVar```), you can assign a value to it.
+- The assigned value must be one of the items (```LOW```,```MEDIUM``` OR ```HIGH```)
+```cpp
+enum Level myVar = MEDIUM;
+```
+- By default, the first item (```LOW```) has the value ```0```, the second (```MEDIUM```) has the value ```1```, etc.
+- If you now try to print myVar, it will output ```1```. which represents ```MEDIUM```
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Create an enum variable and assign a value to it
+    enum Level myVar =  MEDIUM;
+
+    // Print the enum variable
+    cout << myVar;
+
+    return 0;
+}
+```
+### CHANGE VALUES
+- As yoy know, the first item of an enum has the value 0. The second has the value 1, and so on.
+- To make more sense of the values, you can easily change them
+```cpp
+enum Level {
+    LOW = 25,
+    MEDIUM = 50,
+    HIGH = 75
+};
+```
+```cpp
+int main() {
+    enum Level myVar = MEDIUM;
+    cout << myVar; // Now outputs 50
+    
+    return 0;
+}
+```
+- Note that if you assign a value to one specific item, the next item will update their numbers accordingly
+```cpp
+enum Level {
+    LOW = 5;
+    MEDIUM, // Now 6
+    HIGH // Now 7
+};
+```
+### ENUM IN A SWITCH STATEMENT
+- Enums are often used in switch statements to check for corresponding values
+```cpp
+#include <iostream>
+using namespace std;
+
+enum Level {
+    LOW = 1;
+    MEDIUM;
+    HIGH
+};
+
+int main() {
+    enum Level myVar = MEDIUM;
+
+    switch (myVar) {
+        case 1:
+        cout << "Low Level";
+        break;
+        case 2:
+        cout << "Medium Level";
+        break;
+        case 3:
+        cout << "High Level";
+        break;
+    }
+    return 0;
+}
+```
+#### WHEN TO USE ENUMS?
+- Enums are used to give names to constants, which makes the code easier to read and maintain
+- Use enums when you have values that you know aren't going to change, like month days, days, colors, deck of cards, etc.
+
+## C++ REFERENCES
+### CREATING REFERENCES
