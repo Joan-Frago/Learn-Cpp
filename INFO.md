@@ -1638,3 +1638,112 @@ int main() {
 
 ## C++ REFERENCES
 ### CREATING REFERENCES
+- A reference variable is a "reference" to an existing variable and it is created with the ```&``` operator
+```cpp
+string food = "Pizza";  // food variable
+string &meal = food;    // reference to food
+```
+- Now, we can use either the variable name ```food``` or the reference name ```meal``` to refer to the ```food``` variable
+```cpp
+string food = "Pizza";
+string &meal = food;
+
+cout << food << "\n";   // Outputs Pizza
+cout << meal << "\n";   // Outputs Pizza
+```
+### MEMORY ADDRESS
+- In the example above, the ```&``` operator was used to create a reference variable. But it can also be used to get the memory address of a variable; which is the location of where the variable is stored on the computer
+- When a variable is created in C++, a memory address is assigned to the variable. And when we assign a value to the variable, it is stored in this memory address
+- To access it, use the ```&``` operator, and the result will represent where the variable is stored
+```cpp
+string food = "Pizza";
+cout << &food; // Outputs 0x6dfed4
+```
+- The memory address is in hexadecimal form (0x...). Note that you may not get the same result in your program
+#### WHY IS IT USEFUL TO KNOW THE MEMORY ADDRESS?
+- **References** and **Pointers** are important in C++, because they give you the ability to manipulate the data in the computer's memory - **which can reduce the code and improve the performance**
+- These two features are one of the things that make C++ stand out from other programming languages, like Python and Java
+
+## C++ POINTERS
+### CREATING POINTERS
+- You learned from the previous chapter, that we can get the **memory address** of a variable by using the ```&``` operator
+```cpp
+string food = "Pizza"; // A food variable of type string
+
+cout << food; // Outputs de value of food (Pizza)
+
+cout << &food; // Outputs the memory address of food (0x6dfed4)
+```
+- A **pointer** however, is a variable that **stores the memory address as its value**
+- A pointer variable points to a data type (like ```int``` or ```string```) of the same type, and is created with the ```*``` operator. The address of the variable you're working with is assigned to the pointer
+```cpp
+string food = "Pizza"; // A food variable of type string
+
+string* ptr = &food; // A pointer variable, with the name ptr, that stores the address of food
+
+// Output the value of food
+cout << food << "\n";
+
+// Output the memory address of food (0x6dfed4)
+cout << &food << "\n";
+
+// Ouput the momory address of food woth the pointer (0x6dfed4)
+cout << ptr << "\n";
+```
+##### Example explained
+- Create a pointer variable with the name ```ptr```, that **points to** a ```string``` variable, by using the asterisk sign ```*``` (```string* ptr```). Note that the type of the pointer has to match the type of the variable you're working with
+- Use the ```&``` operator to store the memory address of the variable called ```food```, and assign it to the pointer
+- Now, ```ptr``` holds the value of ```food```'s memory address
+
+- **Tip:** There are three ways to decalre pointer variables, but the first way is preferred
+```cpp
+string* mystring; // Preferred
+string *mystring;
+string * mystring;
+```
+
+## ++ DEREFERENCE
+### GET MEMORY ADDRESS AND VALUE
+- In the example from the previous page, we used the pointer variable to get the memory address of a variable (used together with the ```&``` **reference** operator). However, you can also use the pointer to get the value of the variable, by using the ```*``` operator (the **dereference** operator)
+```cpp
+string food = "Pizza"; // Variable declaration
+
+string* ptr = &food // Pointer declaration
+
+// Reference: Output the memory address of food with the pointer (0x6dfed4)
+cout << ptr << "\n";
+
+// Dereference: Output the value of food with the pointer (Pizza)
+cout << *ptr << "\n";
+```
+- Note that the ```*``` sign can be confusing here, as it does two different things in our code
+    - When used in declaration (```string* ptr```), it cretes a **pointer variable**
+    - When not used in declaration, it acts as a **dereference operator**
+## C++ MODIFY POINTERS
+### MODIFY THE POINTER VALUE
+- You can also change the pointer's value. But note that this will also change the value of the original variable
+```cpp
+string food = "Pizza";
+string* ptr = &food;
+
+// Output the value of food (Pizza)
+cout << food << "\n";
+
+// Output the memory address of food (0x6dfed4)
+cout << &food << "\n";
+
+// Access the memory address of food and output its value (Pizza)
+cout << *ptr << "\n";
+
+// Change the value of the pointer (Hamburger)
+*ptr = "Hamburger";
+
+// Output the new value of the pointer (Hamburger)
+cout << *ptr << "\n";
+
+// Output the new value of the food variable (Hamburger)
+cout << food << "\n";
+```
+
+## FUNCTIONS
+
